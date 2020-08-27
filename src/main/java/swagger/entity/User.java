@@ -7,11 +7,7 @@ import io.swagger.annotations.ApiModelProperty;
 import javax.persistence.*;
 
 @Entity
-@Table(	name = "users",
-        uniqueConstraints = {
-                @UniqueConstraint(columnNames = "name"),
-                @UniqueConstraint(columnNames = "email")
-        })
+@Table(	name = "users")
 @ApiModel(description = "Класс cущности пользователя")
 public class User {
     @Id
@@ -26,7 +22,7 @@ public class User {
     private int age;
     @ApiModelProperty(notes = "Время регистрации", example = "1559751301818", position = 4)
     private long created;
-    @ApiModelProperty(notes = "Пароль (в данный момент совпадает с email)", position = 5)
+    @JsonIgnore
     private String password;
     @JsonIgnore
     private  String role;

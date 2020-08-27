@@ -11,16 +11,10 @@ public class DefaultController {
     @Value("${application.swaggerHome}")
     private String swaggerHome;
 
-    // Форма регистрации первого юзера
     @GetMapping
-    public ModelAndView login() {
-        return new ModelAndView("login");
+    public ModelAndView getSwaggerInfo() {
+        return new ModelAndView("redirect:" + swaggerHome);
     }
-
-//    @GetMapping
-//    public ModelAndView getSwaggerInfo() {
-//        return new ModelAndView("redirect:" + swaggerHome);
-//    }
 
     /**
      * Производит закрытия приложение с редиректом на страницу /exit-success с надписью ‘приложение закрыто’

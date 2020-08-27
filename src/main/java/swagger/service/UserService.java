@@ -12,7 +12,6 @@ import swagger.repository.ErrorRepository;
 import swagger.response.ErrorResponse;
 import swagger.security.jwt.AuthEntryPointJwt;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service

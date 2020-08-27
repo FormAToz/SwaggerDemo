@@ -23,7 +23,8 @@ import swagger.service.UserService;
 
 import java.util.List;
 
-@Api(description = "Работа с профилем. Работа с публичной информацией пользователя")
+@Api(tags = "Работа с профилем")
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/profiles/")
 public class ProfileController {
@@ -47,7 +48,7 @@ public class ProfileController {
     }
 
     // Создает запись профиля и присваивает ему id
-    @ApiOperation(value = "Создать новый профиль", tags = { "profiles" })
+    @ApiOperation(value = "Создать новый профиль")
     @PostMapping("/set")
     public ResponseEntity<?> createProfile(@RequestBody UserRequest userRequest) {
 
@@ -82,7 +83,7 @@ public class ProfileController {
     }
 
     // Возвращает последний созданный профиль
-    @ApiOperation(value = "Последний созданный профиль", tags = { "profiles" })
+    @ApiOperation(value = "Последний созданный профиль")
     @GetMapping("/last")
     public ResponseEntity<?> getProfile() {
 
@@ -90,7 +91,7 @@ public class ProfileController {
     }
 
     // Возвращает все созданные профили
-    @ApiOperation(value = "Показать все созданные профили", tags = { "profiles" })
+    @ApiOperation(value = "Показать все созданные профили")
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> allUsers = (List<User>) userRepository.findAll();
@@ -99,7 +100,7 @@ public class ProfileController {
     }
 
     // Возвращает профиль по его ID
-    @ApiOperation(value = "Найти профиль по id", tags = { "profiles" })
+    @ApiOperation(value = "Найти профиль по id")
     @GetMapping("/{id}")
     public ResponseEntity<?> getUserById(@PathVariable int id) {
 
@@ -107,7 +108,7 @@ public class ProfileController {
     }
 
     // Возвращает профиль по email
-    @ApiOperation(value = "Найти профиль по email", tags = { "profiles" })
+    @ApiOperation(value = "Найти профиль по email")
     @PostMapping("/get")
     public ResponseEntity<?> getUserByEmail(@RequestBody EmailRequest emailRequest) {
 

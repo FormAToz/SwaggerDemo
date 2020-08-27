@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description = "Класс ответа с описанием ошибки и временем возникновения")
 public class ErrorTimeResponse extends ErrorResponse{
-    @ApiModelProperty(notes = "Время возникновения", example = "1559751301818", position = 1)
+    @ApiModelProperty(notes = "Время возникновения", example = "1559751301818")
     private final long created;
 
     public ErrorTimeResponse(String message, long created) {

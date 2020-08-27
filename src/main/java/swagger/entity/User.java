@@ -8,22 +8,28 @@ import javax.persistence.*;
 
 @Entity
 @Table(	name = "users")
-@ApiModel(description = "Класс cущности пользователя")
+@ApiModel(description = "Класс cущности пользователей")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(notes = "Уникальный id", example = "7", position = 0)
     private int id;
+
     @ApiModelProperty(notes = "Имя пользователя", example = "Андрей", position = 1)
     private String name;
+
     @ApiModelProperty(notes = "Email пользователя", example = "7.danilov@gmail.com", position = 2)
     private String email;
+
     @ApiModelProperty(notes = "Возраст пользователя", example = "34", position = 3)
     private int age;
+
     @ApiModelProperty(notes = "Время регистрации", example = "1559751301818", position = 4)
     private long created;
+
     @JsonIgnore
     private String password;
+
     @JsonIgnore
     private  String role;
 
